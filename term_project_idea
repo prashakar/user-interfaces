@@ -1,0 +1,22 @@
+HCI Term Project Idea
+Theme: Campus safety
+
+Motos:
+Help us help you!
+
+Android App with following features:
+
+Panic
+- allow to send campus security GPS location for emergency use also calls campus security
+
+Report 
+- allow to send report to campus security about an issue
+
+News feed 
+- provides information to user on live reports or recent incidents
+
+Map with user input 
+- allow user to select area on map and place comment
+- user can highlight some hazard, construction, congestion, spills, damage, etc
+- will be highlighted for all users on their news feed and on the campus map within the app
+- implement learning algorithm to find most common place of hazards (pair with time?, frequency?, location?)
