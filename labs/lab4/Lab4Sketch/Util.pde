@@ -24,10 +24,7 @@ public class Bar {
     colorMode(HSB);
     fill(this.hue, this.s, this.b);
     rect(x, y, w, h);
-    if (isInside(mouseX,mouseY)) {
-       textSize(32);
-       text(this.value,10,30);
-    }
+    
   }
 
   /* Check if a given point lies within this rectangle */

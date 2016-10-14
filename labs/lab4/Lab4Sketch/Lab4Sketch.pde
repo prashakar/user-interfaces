@@ -68,7 +68,6 @@ void buildBarChart(List<Integer> nums, int y) {
 
 
 void draw() {
-  background(0);
   for (Bar bar : bars){
     bar.render();
 
@@ -83,15 +82,27 @@ void mouseClicked(){
       System.out.println("bar clicked");
       if (get(mouseX,mouseY) == -1) {
         System.out.println("going to reverse");
+                            background(0);
+
         for (int i = 0; i < counts.length; i++) {
           bar.setColor(counts[bar_val] * 30, 255, 255);
         }
       } else {
+
         System.out.println("going to change");
         bar.setColor(0,0,255);
         data = new Dataset(sUrl);
-
+        Map nameByNum = data.groupNamesByNumber();
+        List names = (List)nameByNum.get(bar_val);
+        String[] n = new String[names.size()];
+        names.toArray(n);
+        for (int x = 0; x < n.length; x++){
+          fill(x*30, 255, 255);
+          text(n[x], 0, x*30+40, 700, 300);
+          System.out.println(n[x]);
+        }
       }
+
   }
   bar_val +=1;
   }
@@ -100,5 +111,12 @@ void mouseClicked(){
 
 // This function listens to mouse movement
 void mouseMoved(){
-  
+  background(0);
+  for (Bar bar: bars) {
+    bar.render();
+    if (bar.isInside(mouseX,mouseY)) {
+         textSize(32);
+         text("Tooltip: " + bar.value,10,30);
+    }
+  }
 }
